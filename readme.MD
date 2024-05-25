@@ -1,0 +1,1 @@
+# Project made for an internship application homework
