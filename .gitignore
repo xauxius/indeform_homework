@@ -1,3 +1,4 @@
 storage_api/bin
 storage_api/obj
+storage_api/DataStore/Images*
 utils/images_utils/herring.v8i.coco

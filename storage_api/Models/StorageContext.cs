@@ -38,7 +38,7 @@ public partial class StorageContext : DbContext
         var password = _configuration["Database:Password"];
         var port = _configuration["Database:Port"];
 
-        optionsBuilder.UseMySQL($"Server={address}; Port={port}; Database={database}; Uid={user}; Pwd={password};");
+        optionsBuilder.UseMySql($"Server={address}; Port={port}; Database={database}; Uid={user}; Pwd={password};", ServerVersion.Parse("10.4.32-mariadb"));
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
