@@ -1,4 +1,7 @@
 storage_api/bin
 storage_api/obj
 storage_api/DataStore/Images*
+storage_api/DataStore/Models*
 utils/images_utils/herring.v8i.coco
+training/herring_dataset
+training/runs
