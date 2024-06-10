@@ -30,7 +30,7 @@ class Model:
         except Exception as error:
             print(error)
 
-        return [{
+        return [{ # palikta testavimo tikslams, turint veikiančius modelius bus sutvarkyta
             "score": 80,
             "x1": 200,
             "y1": 300,
