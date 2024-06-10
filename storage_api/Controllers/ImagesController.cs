@@ -18,6 +18,7 @@ public class ImagesController : ControllerBase
     public async Task<IActionResult> UploadImage(IFormFile image)
     {
         var imageDto = await _imagesService.CreateImage(_directory, image);
+        
         return Ok(imageDto);
     }
 
@@ -42,8 +43,6 @@ public class ImagesController : ControllerBase
             return NotFound();
         var filePath = imageInfo.SourcePath;
         var stream = await _fileService.GetFileAsync(filePath);
-        if (stream == null)
-            return NotFound();
 
         return File(stream, "application/octet-stream");
     }

@@ -20,7 +20,7 @@ public class DatasetController : ControllerBase
         return Ok(new DatasetDTO(dataset.Id, dataset.Name, dataset.CreatedDate));
     }
 
-    [HttpPost("{datasetId}/image/{imageId}/{setType}")]
+    [HttpPost("{datasetId}/{setType}/image/{imageId}")]
     public async Task<IActionResult> AddImageToDataset(int datasetId, int imageId, SetType setType)
     {
         await _datasetService.AddImageToDataset(imageId, datasetId, setType);
