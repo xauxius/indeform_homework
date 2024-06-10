@@ -1,5 +1,6 @@
 // using storage_api.Models;
 
+using Microsoft.AspNetCore.Http.Features;
 using storage_api.Models;
 using storage_api.Services;
 
@@ -15,6 +16,17 @@ builder.Services.AddSingleton<ImagesService>();
 builder.Services.AddSingleton<LabelsService>();
 builder.Services.AddSingleton<LabelsService>();
 builder.Services.AddSingleton<StorageContext>();
+builder.Services.AddSingleton<ModelService>();
+
+builder.WebHost.ConfigureKestrel(serverOptions => 
+{
+    serverOptions.Limits.MaxRequestBodySize = 200 * 1024 * 1024;
+});
+
+builder.Services.Configure<FormOptions>(options => 
+{
+    options.MultipartBodyLengthLimit = 200 * 1024 * 1024;
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle | reiks istrint
 builder.Services.AddEndpointsApiExplorer();
