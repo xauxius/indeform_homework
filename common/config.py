@@ -1,1 +1,1 @@
-STORAGE_ADDRESS = "localhost"
+STORAGE_ADDRESS = "http://localhost:5270"
